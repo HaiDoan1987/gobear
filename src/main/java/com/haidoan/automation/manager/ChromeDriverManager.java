@@ -11,10 +11,12 @@ public class ChromeDriverManager extends DriverManager
     @Override
     public void createDriver()
     {
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Resource\\ChromeDriver\\chromedriver.exe");
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions optChrome = new ChromeOptions();
         optChrome.addArguments("test-type");
         capabilities.setCapability(ChromeOptions.CAPABILITY, optChrome);
         chromeDriver = new ChromeDriver();
+        driver.set(chromeDriver);
     }
 }

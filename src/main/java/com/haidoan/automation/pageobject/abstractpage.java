@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public abstract class abstractpage
 {
-    private final WebDriver driver;
+    public final WebDriver driver;
 
     public abstractpage(WebDriver driver)
     {

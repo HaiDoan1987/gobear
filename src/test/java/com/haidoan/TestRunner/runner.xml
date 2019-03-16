@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG HyBrid Tests" parallel="none" allow-return-values="true">
+    <parameter name="browser" value="CHROME"></parameter>
+    <!--
+        by calling the TestNG reusable tests in a sequence we create different work flows.
+     -->
+    <test name="Check for successful user registration by order product A">
+        <classes>
+            <class name="com.haidoan.automation.TravelTestSuite" />
+        </classes>
+    </test>
+</suite>

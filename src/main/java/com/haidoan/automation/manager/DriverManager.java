@@ -6,24 +6,23 @@ public abstract class DriverManager
 {
 
 
-    private ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+    ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
     public abstract void createDriver();
 
 
-    public  WebDriver getDriver()
+    public   WebDriver getDriver()
     {
+         if (driver.get() == null)
+         {
+             createDriver();
+         }
         return driver.get();
-    }
-
-    public void setDriver(WebDriver driver)
-    {
-        this.driver.set(driver);
     }
 
     public void quitDriver()
     {
-        this.driver.get().quit();
+        driver.get().quit();
     }
 
 
